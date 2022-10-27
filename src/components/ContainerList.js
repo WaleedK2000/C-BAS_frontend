@@ -54,16 +54,18 @@ export default function ContainerList() {
                         <th scope="col">Container Name</th>
                         <th scope="col">Type</th>
                         <th scope="col">Status</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         dockerList.data.map((element) => {
-                            return <tr>
+                            return <tr key={element.Names}>
                                 <th scope="row"></th>
                                 <td>{element.Names}</td>
                                 <td>{element.Image}</td>
                                 <td>{element.State}</td>
+                                <td><button type="button" className="btn btn-link" to>View</button></td>
                             </tr>
                         })}
                 </tbody>
