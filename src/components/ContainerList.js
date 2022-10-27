@@ -13,9 +13,9 @@ export default function ContainerList() {
     useEffect(() => {
         console.log('sup')
         axios.post('http://localhost:4000/api/fetch/docker/running_containers/', {
-            params: {
-                facultyId: `'AV189'`
-            },
+            // params: {
+            //     facultyId: `'AV189'`
+            // },
         })
             .then(function (response) {
 
@@ -30,10 +30,9 @@ export default function ContainerList() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    let table;
+    // let table;
 
-    console.log('-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX---------')
-    console.log(dockerList)
+
 
     // Condition To check if data is loaded
     if (dockerList === 0) {
@@ -52,19 +51,21 @@ export default function ContainerList() {
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Roll Number</th>
-                        <th scope="col">First Name</th>
-                        <th scope="col">Last Name</th>
+                        <th scope="col">Container Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Status</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         dockerList.data.map((element) => {
-                            return <tr>
+                            return <tr key={element.Names}>
                                 <th scope="row"></th>
                                 <td>{element.Names}</td>
                                 <td>{element.Image}</td>
                                 <td>{element.State}</td>
+                                <td><button type="button" className="btn btn-link" to>View</button></td>
                             </tr>
                         })}
                 </tbody>
