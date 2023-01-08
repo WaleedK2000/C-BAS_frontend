@@ -6,6 +6,7 @@ import Root from "./pages/root";
 import ContainerList from "./components/ContainerList";
 import Navbar from "./components/Navbar";
 import RunningContainers from "./pages/RunningContainers";
+import ContainerData from "./components/ContainerData";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
       <Routes>
         <Route exact path="/" element={<ContainerList />} />
         <Route path="/running_containers" element={<RunningContainers />} />
+        <Route path="/running_containers/:conId" element={<ContainerData />} />
+
         {/* <Route path="running_containers/:id" element={  } / > */}
       </Routes>
     </BrowserRouter>

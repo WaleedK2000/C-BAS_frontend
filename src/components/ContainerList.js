@@ -1,14 +1,18 @@
 // Returns list of containers running in a table, by sending post request to API Server
 
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const axios = require("axios");
 
 export default function ContainerList() {
   const [dockerList, setdockerList] = useState(0);
 
+  const handleClick = (event) => {
+    // print(this);
+  };
+
   useEffect(() => {
-    console.log("sup");
     axios
       .get("http://127.0.0.1:8000/api/container/running_containers", {
         // params: {
@@ -20,16 +24,13 @@ export default function ContainerList() {
       })
       .then((res) => {
         setdockerList(res);
-        console.log("------------------------------------");
-        console.log(res.data);
+        // console.log("------------------------------------");
+        // console.log(res.data);
       })
       .catch(function (error) {
-        console.log(error);
+        // console.log(error);
       });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // let table;
 
   // Condition To check if data is loaded
   if (dockerList === 0) {
@@ -47,15 +48,13 @@ export default function ContainerList() {
         <td>{dockerList.data[key].Config.Image}</td>
         <td>{dockerList.data[key].State.Status}</td>
         <td>
-          <button type="button" className="btn btn-link btn-sm" to="/">
-            View
-          </button>
+          <Link to={"/running_containers/" + key}>Click Here</Link>
         </td>
       </tr>
     ));
 
-    console.log("heifhrfhrffrfrfrff");
-    console.log(list);
+    // console.log("heifhrfhrffrfrfrff");
+    // console.log(list);
 
     return (
       <table className="table">

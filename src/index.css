@@ -11,16 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-splitScreen {
-  display: "flex";
-  flexdirection: "row";
-}
-
-topPane {
-  width: "50%";
-}
-
-bottomPane {
-  width: "50%";
-}
