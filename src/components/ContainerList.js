@@ -10,7 +10,7 @@ export default function ContainerList() {
   useEffect(() => {
     console.log("sup");
     axios
-      .get("http://127.0.0.1:8000/api/docker/running_containers", {
+      .get("http://127.0.0.1:8000/api/container/running_containers", {
         // params: {
         //     facultyId: `'AV189'`
         // },
