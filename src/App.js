@@ -8,6 +8,8 @@ import Navbar from "./components/Navbar";
 import RunningContainers from "./pages/RunningContainers";
 import ContainerData from "./components/ContainerData";
 import Login from "./pages/Login";
+import AddNode from "./pages/AddNode";
+import NodeList from "./pages/NodeList";
 
 function App() {
   return (
@@ -19,6 +21,10 @@ function App() {
         <Route path="/running_containers/:conId" element={<ContainerData />} />
 
         <Route path="/login" element={<Login />} />
+
+        <Route path="/node/New" element={<AddNode />} />
+
+        <Route path="/node/view" element={<NodeList />} />
 
         {/* <Route path="running_containers/:id" element={  } / > */}
       </Routes>
