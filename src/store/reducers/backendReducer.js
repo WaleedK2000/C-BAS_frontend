@@ -1,15 +1,15 @@
-import { backendReducer } from "../types";
+import { SET_BACKEND_IP_ADDRESS } from "../types";
 
 const initialState = {
-  backendReducer: "127.0.0.1",
+  backendIp: "http://127.0.0.1:3000",
 };
 
 export default function backendReducer(state = initialState, action) {
   switch (action.type) {
-    case SET_IP_ADDRESS:
+    case SET_BACKEND_IP_ADDRESS:
       return {
         ...state,
-        backendReducer: action.payload,
+        backendIp: action.payload,
       };
     default:
       return state;

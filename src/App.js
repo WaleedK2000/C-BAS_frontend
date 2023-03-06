@@ -10,6 +10,7 @@ import ContainerData from "./components/ContainerData";
 import Login from "./pages/Login";
 import AddNode from "./pages/AddNode";
 import NodeList from "./pages/NodeList";
+import Settings from "./pages/Settings";
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
         <Route path="/node/New" element={<AddNode />} />
 
         <Route path="/node/view" element={<NodeList />} />
+
+        <Route path="/settings" element={<Settings />} />
 
         {/* <Route path="running_containers/:id" element={  } / > */}
       </Routes>
