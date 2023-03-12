@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import AddNode from "./pages/AddNode";
 import NodeList from "./pages/NodeList";
 import Settings from "./pages/Settings";
+import NodeData from "./pages/NodeData";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/node/New" element={<AddNode />} />
 
         <Route path="/node/view" element={<NodeList />} />
+        <Route path="/node/view/:nodeId" element={<NodeData />} />
 
         <Route path="/settings" element={<Settings />} />
 

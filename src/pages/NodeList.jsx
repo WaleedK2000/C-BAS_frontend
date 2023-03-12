@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function NodeList() {
   const [nodes, setNodes] = useState([]);
@@ -15,12 +16,13 @@ export default function NodeList() {
   return (
     <div>
       <h1>All Nodes</h1>
-      <table>
+      <table className="table">
         <thead>
           <tr>
             <th>Name</th>
             <th>IP Address</th>
             <th>Port Number</th>
+            <th>Connection Status</th>
           </tr>
         </thead>
         <tbody>
@@ -29,6 +31,7 @@ export default function NodeList() {
               <td>{node.name}</td>
               <td>{node.ipAddress}</td>
               <td>{node.portNumber}</td>
+              <td>{<Link to={"/node/view/" + node._id}>Click Here</Link>}</td>
             </tr>
           ))}
         </tbody>
