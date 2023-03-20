@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import RotateLoader from "react-spinners/RotateLoader";
 import ContainerListTable from "./ContainerListTable";
+import { useParams } from "react-router";
 
 import "../scss/components/containerList.scss";
 
@@ -19,13 +20,17 @@ export default function ContainerList(props) {
 
   const controller = new AbortController();
 
+  const { nodeId } = useParams();
+
   useEffect(() => {
+    const apiURL = "http://127.0.0.1:3000/api/exploits/containers/" + nodeId;
     setLoading(true);
     axios
-      .get("http://127.0.0.1:8000/api/container/running_containers", {
+      .get(apiURL, {
         // Abort Signal Cancels Request if no response or other kind of error occur
         signal: AbortSignal.timeout(18000),
-        // params: {
+        // nodeId: nodeId,
+        // params: {8
         //     facultyId: `'AV189'`
         // },
       })

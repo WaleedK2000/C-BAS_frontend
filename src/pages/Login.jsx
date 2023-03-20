@@ -25,7 +25,7 @@ export default function Login() {
         }
       );
       console.log(response.data);
-      navigate("/running_containers");
+      navigate("/red");
       // handle successful login
     } catch (error) {
       if (error.response && error.response.status === 401) {

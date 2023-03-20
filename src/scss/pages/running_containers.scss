@@ -18,17 +18,17 @@ body {
 
 .header {
   grid-area: h;
-  background-color: red;
+  background-color: white;
 }
 
 .left_side {
   grid-area: l;
-  background-color: rgb(211, 191, 191);
+  background-color: rgb(129, 123, 123);
 }
 
 .right_side {
   grid-area: r;
-  background-color: green;
+  background-color: rgb(113, 216, 113);
   border-left: 5px;
   border-left-style: groove;
 }

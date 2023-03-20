@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router";
 
 export default function ContainerListTable(props) {
+  const { nodeId } = useParams();
   const dockerList = props.dockerList;
   const containerNames = Object.keys(dockerList.data);
   var i = 0;
@@ -27,7 +29,9 @@ export default function ContainerListTable(props) {
               <td>{dockerList.data[key].Config.Image}</td>
               <td>{dockerList.data[key].State.Status}</td>
               <td>
-                <Link to={"/running_containers/" + key}>Click Here</Link>
+                <Link to={"/" + nodeId + "/running_containers/" + key}>
+                  Click Here
+                </Link>
               </td>
             </tr>
           ))}

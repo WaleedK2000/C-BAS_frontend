@@ -1,0 +1,16 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.dashboard-title {
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.dashboard-main-content {
+  flex: 1;
+  padding: 20px;
+}

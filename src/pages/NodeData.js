@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 import axios from "axios";
 
@@ -18,7 +19,7 @@ export default function NodeData(props) {
       setNode(...result.data);
     };
     fetchData();
-  }, []);
+  });
 
   return (
     <div>
@@ -31,7 +32,9 @@ export default function NodeData(props) {
             <li>{node.ipAddress}</li>
           </ul>
           <h2>Red Team Interface</h2>
-          <button>Red Team Scripts</button>
+          <Link to={"/" + node._id + "/running_containers"}>
+            <button>Red Team Scripts</button>
+          </Link>
         </div>
       ) : (
         <h2>loading</h2>
