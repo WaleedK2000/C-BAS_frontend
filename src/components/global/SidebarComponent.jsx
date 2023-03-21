@@ -51,9 +51,16 @@ export default function SidebarComponent() {
           <MenuItem> Pie charts </MenuItem>
           <MenuItem> Line charts </MenuItem>
         </SubMenu> */}
-          <MenuItem prefix={<FiberManualRecordIcon />}> Nodes </MenuItem>
+          <MenuItem
+            prefix={<FiberManualRecordIcon />}
+            component={<Link to="/node/view" />}
+          >
+            {" "}
+            Nodes{" "}
+          </MenuItem>
           <MenuItem prefix={<Inventory2OutlinedIcon />}> Containers </MenuItem>
           <MenuItem prefix={<DescriptionOutlinedIcon />}> Scripts </MenuItem>
+          <MenuItem prefix={<DescriptionOutlinedIcon />}> Settings </MenuItem>
         </Menu>
       </div>
     </Sidebar>

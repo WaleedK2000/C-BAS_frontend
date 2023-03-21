@@ -5,13 +5,20 @@ import "../scss/pages/RedTeamConsole.scss";
 import "../scss/components/containerList.scss";
 import SidebarComponent from "../components/global/SidebarComponent";
 import { Box } from "@mui/system";
+import VulnerabilityStatusPieChart from "../components/redteam_dashboard/charts/VulnerabilityStatusPieChart";
 
 export default function RedTeamConsole() {
   return (
-    <div className="dashboard-container">
-      {/* <SidebarComponent /> */}
-
-      <div className="dashboard-main-content">Main content goes here</div>
+    <div>
+      <div className="">
+        <h1>Red Team Dashboard</h1>
+      </div>
+      <div>
+        <div className="dash">
+          <h2>Vulnerability Status Report</h2>
+          <VulnerabilityStatusPieChart />
+        </div>
+      </div>
     </div>
   );
 }
