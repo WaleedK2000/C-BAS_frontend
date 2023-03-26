@@ -61,6 +61,7 @@ export default function SidebarComponent() {
           <MenuItem prefix={<Inventory2OutlinedIcon />}> Containers </MenuItem>
           <MenuItem prefix={<DescriptionOutlinedIcon />}> Scripts </MenuItem>
           <MenuItem prefix={<DescriptionOutlinedIcon />}> Settings </MenuItem>
+          <MenuItem prefix={<DescriptionOutlinedIcon />}> Logout </MenuItem>
         </Menu>
       </div>
     </Sidebar>

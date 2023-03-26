@@ -23,6 +23,7 @@ export default function NodeList() {
             <th>IP Address</th>
             <th>Port Number</th>
             <th>Connection Status</th>
+            <th>---</th>
           </tr>
         </thead>
         <tbody>

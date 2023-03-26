@@ -14,9 +14,15 @@ export default function RedTeamConsole() {
         <h1>Red Team Dashboard</h1>
       </div>
       <div>
-        <div className="dash">
-          <h2>Vulnerability Status Report</h2>
-          <VulnerabilityStatusPieChart />
+        <div className="grid">
+          <div className="grid-container">
+            <h2>Vulnerability Status Report</h2>
+            <VulnerabilityStatusPieChart />
+          </div>
+          <div className="grid-container">
+            <h2>Vulnerability score</h2>
+            <VulnerabilityStatusPieChart />
+          </div>
         </div>
       </div>
     </div>
