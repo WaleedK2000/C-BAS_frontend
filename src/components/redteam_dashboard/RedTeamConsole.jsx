@@ -1,11 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import "../scss/pages/RedTeamConsole.scss";
-
-import "../scss/components/containerList.scss";
-import SidebarComponent from "../components/global/SidebarComponent";
-import { Box } from "@mui/system";
-import VulnerabilityStatusPieChart from "../components/redteam_dashboard/charts/VulnerabilityStatusPieChart";
+import "./RedTeamConsole.scss";
+import VulnerabilityStatusPieChart from "./charts/VulnerabilityStatusPieChart";
 
 export default function RedTeamConsole() {
   return (

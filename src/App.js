@@ -12,7 +12,7 @@ import AddNode from "./pages/AddNode";
 import NodeList from "./pages/NodeList";
 import Settings from "./pages/Settings";
 import NodeData from "./pages/NodeData";
-import RedTeamConsole from "./pages/RedTeamConsole";
+import RedTeamConsole from "./components/redteam_dashboard/RedTeamConsole";
 import SidebarComponent from "./components/global/SidebarComponent";
 
 import "./components/global/SidebarComponent.scss";
