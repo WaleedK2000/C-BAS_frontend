@@ -1,7 +1,6 @@
 // import { createDockerDesktopClient } from '@docker/extension-api-client';
 // import React, { useState } from 'react';
 
-
 // const ddClient = createDockerDesktopClient();
 
 // export default async function Root() {
@@ -12,7 +11,6 @@
 //     ]);
 //     setDockerInfo(result.parseJsonObject());
 
-
 //     console.log(dockerInfo);
 
 //     return (
@@ -20,14 +18,14 @@
 //     )
 // }
 
-import React from 'react'
-import ContainerList from '../components/ContainerList';
-import Navbar from '../components/Navbar';
+import React from "react";
+import ContainerList from "../components/ContainerList";
+import Navbar from "../components/Navbar";
 export default function root() {
-    return (
-        <>
-            <Navbar />
-            <ContainerList />
-        </>
-    )
+  return (
+    <>
+      <Navbar />
+      <ContainerList />
+    </>
+  );
 }

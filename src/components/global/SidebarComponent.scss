@@ -1,0 +1,99 @@
+$primary-red: #ff1b1c;
+
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.sidebar {
+  background-color: white;
+  color: black;
+  width: 250px;
+
+  .pro-menu-item {
+    &:hover {
+      background-color: #c0392b;
+      color: white;
+    }
+  }
+
+  .pro-sidebar-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+
+    .logo {
+      height: 30px;
+      margin-right: 10px;
+    }
+  }
+
+  .pro-menu {
+    padding: 20px;
+  }
+
+  .pro-menu .pro-menu-item {
+    font-size: 18px;
+  }
+
+  .pro-menu .pro-menu-item.pro-sub-menu > .pro-inner-list-item {
+    font-size: 16px;
+  }
+}
+
+.dashboard-main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.sidebar-top {
+  text-align: center;
+  border-top: solid;
+  border-bottom: solid;
+  border-image-slice: 10;
+  border-image-source: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 0) 0%,
+    $primary-red 35%,
+    $primary-red 65%,
+    rgba(0, 212, 255, 0) 100%
+  );
+
+  border-width: 5px;
+
+  margin-bottom: 20px;
+
+  h2 {
+    font-size: 25px;
+    font-weight: 700;
+    color: $primary-red;
+  }
+}
+
+.sidebar-header {
+  display: flex;
+  flex-direction: row;
+
+  margin-top: 20px;
+
+  height: 80px;
+
+  img {
+    // margin-top: 5px;
+    margin-left: 25px;
+  }
+
+  h1 {
+    font-size: 40px;
+    margin-left: 20px;
+    padding-top: 8px;
+    // mar
+    // background-color: red;
+  }
+  p {
+    font-size: 20px;
+  }
+}
