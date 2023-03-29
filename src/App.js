@@ -16,6 +16,7 @@ import RedTeamConsole from "./components/redteam_dashboard/RedTeamConsole";
 import SidebarComponent from "./components/global/SidebarComponent";
 
 import "./components/global/SidebarComponent.scss";
+import AttackMatrix from "./components/scripts/attackMatrix/AttackMatrix";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route path="/node/view/:nodeId" element={<NodeData />} />
 
             <Route path="/red" element={<RedTeamConsole />} />
+            <Route path="/red/attack_matrix" element={<AttackMatrix />} />
 
             <Route
               path=":nodeId/running_containers"
