@@ -15,7 +15,7 @@ import NodeData from "./pages/NodeData";
 import RedTeamConsole from "./components/redteam_dashboard/RedTeamConsole";
 import SidebarComponent from "./components/global/SidebarComponent";
 
-import "./components/global/SidebarComponent.scss";
+import "./App.scss";
 import AttackMatrix from "./components/scripts/attackMatrix/AttackMatrix";
 
 function App() {

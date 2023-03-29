@@ -1,0 +1,35 @@
+$pink: #ffd1dc;
+
+.attack-matrix {
+  padding-left: 120px;
+  .grid-container {
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+  }
+
+  .grid-item {
+    background-color: $pink;
+    color: #ff1b1c;
+    padding: 20px;
+    text-align: center;
+
+    width: 300px;
+    height: 300px;
+
+    border: solid 3px;
+    border-radius: 20px;
+    border-color: #c08090;
+  }
+
+  .grid-item:hover {
+    background-color: #ff1b1c;
+    color: $pink;
+    transition: 0.5s;
+  }
+  .text-link {
+    color: inherit;
+    text-decoration: inherit;
+  }
+}
