@@ -26,7 +26,10 @@ export default function AttackMatrix() {
       <div className="grid-container">
         {Object.keys(gridVal).map((key) => (
           <div className="grid-item">
-            <Link className="text-link" to={gridVal[key].link_To}>
+            <Link
+              className="text-link"
+              to={"/red/attack_matrix/" + gridVal[key].link_To}
+            >
               <GridItem
                 key={key}
                 title={gridVal[key].title}

@@ -17,6 +17,7 @@ import SidebarComponent from "./components/global/SidebarComponent";
 
 import "./App.scss";
 import AttackMatrix from "./components/scripts/attackMatrix/AttackMatrix";
+import AttackNodeSelection from "./components/scripts/AttackNodeSelection";
 
 function App() {
   return (
@@ -44,6 +45,10 @@ function App() {
 
             <Route path="/red" element={<RedTeamConsole />} />
             <Route path="/red/attack_matrix" element={<AttackMatrix />} />
+            <Route
+              path="/red/attack_matrix/:attack"
+              element={<AttackNodeSelection />}
+            />
 
             <Route
               path=":nodeId/running_containers"
