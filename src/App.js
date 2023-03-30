@@ -18,6 +18,8 @@ import SidebarComponent from "./components/global/SidebarComponent";
 import "./App.scss";
 import AttackMatrix from "./components/scripts/attackMatrix/AttackMatrix";
 import AttackNodeSelection from "./components/scripts/AttackNodeSelection";
+import RunScripts from "./components/scripts/RunScripts";
+import ScriptsDescription from "./components/scripts/ScriptsDescription";
 
 function App() {
   return (
@@ -48,6 +50,16 @@ function App() {
             <Route
               path="/red/attack_matrix/:attack"
               element={<AttackNodeSelection />}
+            />
+
+            <Route
+              path="/red/attack_matrix/:attack/:conId"
+              element={<RunScripts />}
+            />
+
+            <Route
+              path="/red/attack_matrix/:attack/:nodeId/:script"
+              element={<ScriptsDescription />}
             />
 
             <Route

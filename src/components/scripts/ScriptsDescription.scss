@@ -1,0 +1,31 @@
+$pink: #ffd1dc;
+$red: #ff1b1c;
+
+.script-description {
+  overflow: hidden;
+
+  textarea {
+    resize: none;
+    background-color: $pink;
+    color: $red;
+    border-radius: 20px;
+    border-width: 2px;
+    border-color: #ff1b1c;
+  }
+
+  button {
+    background-color: $pink;
+    color: $red;
+    font-weight: 600;
+    font-size: 50px;
+    width: 400px;
+    height: 250px;
+    border-radius: 20px;
+
+    &:hover {
+      background-color: $red;
+      color: $pink;
+      transition: 0.5s;
+    }
+  }
+}

@@ -25,7 +25,10 @@ export default function AttackNodeSelection() {
       <div className="grid-container">
         {Object.keys(nodes).map((key) => (
           <div className="grid-item">
-            <Link className="text-link" to={"/red/attack_matrix/"}>
+            <Link
+              className="text-link"
+              to={"/red/attack_matrix/" + attack + "/" + nodes[key]._id}
+            >
               <GridItem
                 key={key}
                 title={nodes[key].name}

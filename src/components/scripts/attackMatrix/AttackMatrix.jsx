@@ -15,6 +15,18 @@ export default function AttackMatrix() {
     },
     2: {
       title: "Initial Access",
+      icon: <DescriptionOutlinedIcon style={{ fontSize: "100px" }} />,
+      link_To: "INITIAL_ACCESS",
+    },
+    3: {
+      title: "Reconnaissance",
+      icon: <DescriptionOutlinedIcon style={{ fontSize: "100px" }} />,
+      link_To: "RECONNAISSANCE",
+    },
+    4: {
+      title: "Denial of Service",
+      icon: <DescriptionOutlinedIcon style={{ fontSize: "100px" }} />,
+      link_To: "DOS",
     },
   };
 
