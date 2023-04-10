@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+
 import RedTeamInterface from "../interface_red/RedTeamInterface";
+import BlueTeamInterface from "../interface_blue/BlueTeamInterface";
 
 import Login from "../../pages/Login";
 
@@ -17,6 +19,7 @@ export default function InterfaceLoader() {
     <div>
       {interfaceValue === "LOGIN" && <Login />}
       {interfaceValue === "RED" && <RedTeamInterface />}
+      {interfaceValue === "BLUE" && <BlueTeamInterface />}
     </div>
   );
 }

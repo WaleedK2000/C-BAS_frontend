@@ -13,3 +13,10 @@ export const setInterfaceToRed = () => {
     payload: "RED",
   };
 };
+
+export const setInterfaceToBlue = () => {
+  return {
+    type: SET_INTERFACE,
+    payload: "BLUE",
+  };
+};
