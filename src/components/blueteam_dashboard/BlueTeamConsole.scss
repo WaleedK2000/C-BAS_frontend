@@ -1,5 +1,11 @@
 $primary-red: #ff1b1c;
 
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
 .sidebar {
   background-color: white;
   color: black;
@@ -36,6 +42,11 @@ $primary-red: #ff1b1c;
   .pro-menu .pro-menu-item.pro-sub-menu > .pro-inner-list-item {
     font-size: 16px;
   }
+}
+
+.dashboard-main-content {
+  flex: 1;
+  padding: 20px;
 }
 
 .sidebar-top {

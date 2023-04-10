@@ -12,10 +12,14 @@ import AddNode from "./pages/AddNode";
 import NodeList from "./pages/NodeList";
 import Settings from "./pages/Settings";
 import NodeData from "./pages/NodeData";
-import RedTeamConsole from "./pages/RedTeamConsole";
+import RedTeamConsole from "./components/redteam_dashboard/RedTeamConsole";
 import SidebarComponent from "./components/global/SidebarComponent";
 
-import "./components/global/SidebarComponent.scss";
+import "./App.scss";
+import AttackMatrix from "./components/scripts/attackMatrix/AttackMatrix";
+import AttackNodeSelection from "./components/scripts/AttackNodeSelection";
+import RunScripts from "./components/scripts/RunScripts";
+import ScriptsDescription from "./components/scripts/ScriptsDescription";
 
 function App() {
   return (
@@ -42,6 +46,21 @@ function App() {
             <Route path="/node/view/:nodeId" element={<NodeData />} />
 
             <Route path="/red" element={<RedTeamConsole />} />
+            <Route path="/red/attack_matrix" element={<AttackMatrix />} />
+            <Route
+              path="/red/attack_matrix/:attack"
+              element={<AttackNodeSelection />}
+            />
+
+            <Route
+              path="/red/attack_matrix/:attack/:conId"
+              element={<RunScripts />}
+            />
+
+            <Route
+              path="/red/attack_matrix/:attack/:nodeId/:script"
+              element={<ScriptsDescription />}
+            />
 
             <Route
               path=":nodeId/running_containers"

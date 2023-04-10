@@ -1,3 +1,4 @@
+import React from "react";
 import { menuClasses } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
@@ -16,7 +17,7 @@ import "./SidebarComponent.scss";
 
 import { Link } from "react-router-dom";
 
-export default function SidebarComponent() {
+export default function BlueSidebarComponent() {
   return (
     <Sidebar className="sidebar-main">
       <div className="sidebar-main">
@@ -59,12 +60,7 @@ export default function SidebarComponent() {
             Nodes{" "}
           </MenuItem>
           <MenuItem prefix={<Inventory2OutlinedIcon />}> Containers </MenuItem>
-          <MenuItem
-            prefix={<DescriptionOutlinedIcon />}
-            component={<Link to="/red/attack_matrix" />}
-          >
-            Scripts
-          </MenuItem>
+          <MenuItem prefix={<DescriptionOutlinedIcon />}> Scripts </MenuItem>
           <MenuItem prefix={<DescriptionOutlinedIcon />}> Settings </MenuItem>
           <MenuItem prefix={<DescriptionOutlinedIcon />}> Logout </MenuItem>
         </Menu>

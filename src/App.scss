@@ -1,0 +1,11 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.dashboard-main-content {
+  flex: 1;
+  padding: 20px;
+  //   background-color: wheat;
+}
