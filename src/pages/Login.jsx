@@ -7,7 +7,10 @@ import { useNavigate } from "react-router-dom";
 import "../scss/login.scss";
 
 import { useDispatch } from "react-redux";
-import { setInterfaceToRed } from "../store/actions/interfaceActions";
+import {
+  setInterfaceToRed,
+  setInterfaceToBlue,
+} from "../store/actions/interfaceActions";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -29,8 +32,15 @@ export default function Login() {
           password: password,
         }
       );
-      console.log(response.data);
-      dispatch(setInterfaceToRed());
+      console.log(response.data.user.userType);
+
+      if (response.data.user.userType === "BLUE") {
+        console.log("Blue User");
+        dispatch(setInterfaceToBlue());
+      } else if (response.data.user.userType === "RED") {
+        dispatch(setInterfaceToRed());
+      }
+
       // navigate("/red");
       // handle successful login
     } catch (error) {
