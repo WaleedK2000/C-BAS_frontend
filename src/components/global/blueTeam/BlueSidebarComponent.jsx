@@ -1,19 +1,13 @@
-import React from "react";
+// import React from "react";
 import { menuClasses } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
 import React, { Component } from "react";
-import {
-  Sidebar,
-  Menu,
-  MenuItem,
-  SubMenu,
-  sidebarClasses,
-} from "react-pro-sidebar";
+import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 
-import "./SidebarComponent.scss";
+import "./BlueSidebarComponent.scss";
 
 import { Link } from "react-router-dom";
 
@@ -21,12 +15,12 @@ export default function BlueSidebarComponent() {
   return (
     <Sidebar className="sidebar-main">
       <div className="sidebar-main">
-        <div className="sidebar-top">
+        <div className="sidebar-top-blue">
           <div className="sidebar-header">
             <img src="c1.png" width={"60px"} height={"60px"}></img>
             <h1>C-BAS</h1> <br />
           </div>
-          <h2>Red Team</h2>
+          <h2>Blue Team</h2>
         </div>
         <Menu
           menuItemStyles={{

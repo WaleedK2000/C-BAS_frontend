@@ -1,4 +1,4 @@
-$primary-red: #5e91ed;
+$primary-blue: #5e91ed;
 
 .sidebar {
   background-color: white;
@@ -38,7 +38,7 @@ $primary-red: #5e91ed;
   }
 }
 
-.sidebar-top {
+.sidebar-top-blue {
   text-align: center;
   border-top: solid;
   border-bottom: solid;
@@ -46,8 +46,8 @@ $primary-red: #5e91ed;
   border-image-source: linear-gradient(
     90deg,
     rgba(2, 0, 36, 0) 0%,
-    $primary-red 35%,
-    $primary-red 65%,
+    $primary-blue 35%,
+    $primary-blue 65%,
     rgba(0, 212, 255, 0) 100%
   );
 
@@ -58,7 +58,7 @@ $primary-red: #5e91ed;
   h2 {
     font-size: 25px;
     font-weight: 700;
-    color: $primary-red;
+    color: $primary-blue;
   }
 }
 
