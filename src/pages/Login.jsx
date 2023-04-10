@@ -6,13 +6,18 @@ import { useNavigate } from "react-router-dom";
 
 import "../scss/login.scss";
 
+import { useDispatch } from "react-redux";
+import { setInterfaceToRed } from "../store/actions/interfaceActions";
+
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  const dispatch = useDispatch();
+
   // const history = useHistory();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,7 +30,8 @@ export default function Login() {
         }
       );
       console.log(response.data);
-      navigate("/red");
+      dispatch(setInterfaceToRed());
+      // navigate("/red");
       // handle successful login
     } catch (error) {
       if (error.response && error.response.status === 401) {

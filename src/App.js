@@ -20,64 +20,66 @@ import AttackMatrix from "./components/scripts/attackMatrix/AttackMatrix";
 import AttackNodeSelection from "./components/scripts/AttackNodeSelection";
 import RunScripts from "./components/scripts/RunScripts";
 import ScriptsDescription from "./components/scripts/ScriptsDescription";
+import InterfaceLoader from "./components/interface_loader/InterfaceLoader";
 
 function App() {
   return (
-    <BrowserRouter>
-      {/* <Navbar /> */}
+    <InterfaceLoader />
+    // <BrowserRouter>
+    //   {/* <Navbar /> */}
 
-      <div className="dashboard-container">
-        <SidebarComponent />
-        <div className="dashboard-main-content">
-          {/* <SidebarComponent /> */}
-          <Routes>
-            <Route exact path="/" element={<ContainerList />} />
-            <Route path="/running_containers" element={<RunningContainers />} />
-            <Route
-              path="/running_containers/:conId"
-              element={<ContainerData />}
-            />
+    //   <div className="dashboard-container">
+    //     <SidebarComponent />
+    //     <div className="dashboard-main-content">
+    //       {/* <SidebarComponent /> */}
+    //       <Routes>
+    //         <Route exact path="/" element={<ContainerList />} />
+    //         <Route path="/running_containers" element={<RunningContainers />} />
+    //         <Route
+    //           path="/running_containers/:conId"
+    //           element={<ContainerData />}
+    //         />
 
-            <Route path="/login" element={<Login />} />
+    //         <Route path="/login" element={<Login />} />
 
-            <Route path="/node/New" element={<AddNode />} />
+    //         <Route path="/node/New" element={<AddNode />} />
 
-            <Route path="/node/view" element={<NodeList />} />
-            <Route path="/node/view/:nodeId" element={<NodeData />} />
+    //         <Route path="/node/view" element={<NodeList />} />
+    //         <Route path="/node/view/:nodeId" element={<NodeData />} />
 
-            <Route path="/red" element={<RedTeamConsole />} />
-            <Route path="/red/attack_matrix" element={<AttackMatrix />} />
-            <Route
-              path="/red/attack_matrix/:attack"
-              element={<AttackNodeSelection />}
-            />
+    //         <Route path="/red" element={<RedTeamConsole />} />
+    //         <Route path="/red/attack_matrix" element={<AttackMatrix />} />
+    //         <Route
+    //           path="/red/attack_matrix/:attack"
+    //           element={<AttackNodeSelection />}
+    //         />
 
-            <Route
-              path="/red/attack_matrix/:attack/:conId"
-              element={<RunScripts />}
-            />
+    //         <Route
+    //           path="/red/attack_matrix/:attack/:conId"
+    //           element={<RunScripts />}
+    //         />
 
-            <Route
-              path="/red/attack_matrix/:attack/:nodeId/:script"
-              element={<ScriptsDescription />}
-            />
+    //         <Route
+    //           path="/red/attack_matrix/:attack/:nodeId/:script"
+    //           element={<ScriptsDescription />}
+    //         />
 
-            <Route
-              path=":nodeId/running_containers"
-              element={<RunningContainers />}
-            />
-            <Route
-              path=":nodeId/running_containers/:conId"
-              element={<ContainerData />}
-            />
+    //         <Route
+    //           path=":nodeId/running_containers"
+    //           element={<RunningContainers />}
+    //         />
+    //         <Route
+    //           path=":nodeId/running_containers/:conId"
+    //           element={<ContainerData />}
+    //         />
 
-            <Route path="/settings" element={<Settings />} />
+    //         <Route path="/settings" element={<Settings />} />
 
-            {/* <Route path="running_containers/:id" element={  } / > */}
-          </Routes>
-        </div>
-      </div>
-    </BrowserRouter>
+    //         {/* <Route path="running_containers/:id" element={  } / > */}
+    //       </Routes>
+    //     </div>
+    //   </div>
+    // </BrowserRouter>
   );
 }
 
