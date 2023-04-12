@@ -54,7 +54,13 @@ export default function BlueSidebarComponent() {
             Nodes{" "}
           </MenuItem>
           <MenuItem prefix={<Inventory2OutlinedIcon />}> Containers </MenuItem>
-          <MenuItem prefix={<DescriptionOutlinedIcon />}> Scripts </MenuItem>
+          <MenuItem
+            prefix={<DescriptionOutlinedIcon />}
+            component={<Link to="/blue/Defense_Matrix" />}
+          >
+            {" "}
+            Scripts{" "}
+          </MenuItem>
           <MenuItem prefix={<DescriptionOutlinedIcon />}> Settings </MenuItem>
           <MenuItem prefix={<DescriptionOutlinedIcon />}> Logout </MenuItem>
         </Menu>
