@@ -7,6 +7,7 @@ import DefenseMatrix from "../blue_scripts/DefenseMatrix";
 import DockerLog from "../blue_scripts/docker_log/DockerLog";
 import SelectionContainer from "../selection_container/SelectionContainer";
 import SelectionNode from "../selection_node/SelectionNode";
+import SelectionNodeContainer from "../selection_node_container/SelectionNodeContainer";
 
 export default function BlueTeamInterface() {
   return (
@@ -25,7 +26,7 @@ export default function BlueTeamInterface() {
               path="/blue/Defense_Matrix/:attack"
               element={<DefenseMatrix />}
             />
-            <Route path="/blue/test" element={<SelectionNode />} />
+            <Route path="/blue/test" element={<SelectionNodeContainer />} />
           </Routes>
         </div>
       </div>

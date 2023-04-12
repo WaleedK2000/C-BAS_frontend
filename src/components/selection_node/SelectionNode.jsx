@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 const axios = require("axios");
-export default function SelectionNode() {
+export default function SelectionNode(props) {
   const [nodes, setNodes] = useState([]);
 
   useEffect(() => {
@@ -10,14 +10,22 @@ export default function SelectionNode() {
     };
     fetchData();
   }, []);
-  const [selectedNode, setSelectedNode] = useState(null);
+  //   const [selectedNode, setSelectedNode] = useState(null);
+
+  const selectedNode = props.selectedNode;
+  const setSelectedNode = props.setSelectedNode;
+
+  //   const update = props.setSelectedNode;
 
   return (
     <div>
       {/* <h1>All Nodes</h1> */}
       <select
         value={selectedNode}
-        onChange={(e) => setSelectedNode(e.target.value)}
+        onChange={(e) => {
+          setSelectedNode(e.target.value);
+          //   update(e.target.value);
+        }}
       >
         <option value="">Please Select Node</option>
         {nodes.map((node) => (
@@ -26,21 +34,6 @@ export default function SelectionNode() {
           </option>
         ))}
       </select>
-      {selectedNode && (
-        <div>
-          <p>
-            IP Address:{" "}
-            {nodes.find((node) => node._id === selectedNode).ipAddress}
-          </p>
-          <p>
-            Port Number:{" "}
-            {nodes.find((node) => node._id === selectedNode).portNumber}
-          </p>
-          {/* <Link to={"/node/view/" + selectedNode}> */}
-          Click Here
-          {/* </Link> */}
-        </div>
-      )}
     </div>
   );
 }

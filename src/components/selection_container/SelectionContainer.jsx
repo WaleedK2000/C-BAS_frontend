@@ -16,7 +16,7 @@ export default function SelectionContainer(props) {
   //   const { nodeId } = useParams();
 
   //   const nodeId = props.nodeId;
-  const nodeId = "63f515ae0e83e24a744bec7e";
+  const nodeId = props.node;
 
   useEffect(() => {
     const apiURL = "http://127.0.0.1:3000/api/exploits/containers/" + nodeId;
@@ -32,9 +32,6 @@ export default function SelectionContainer(props) {
       .then((res) => {
         setdockerList(res);
         setLoading(false);
-
-        // console.log("------------------------------------");
-        // console.log(res.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -57,6 +54,11 @@ export default function SelectionContainer(props) {
   }, []);
 
   return (
-    dockerList && <SelectionContainerPresentation dockerList={dockerList} />
+    dockerList && (
+      <SelectionContainerPresentation
+        dockerList={dockerList}
+        selectedContainer={props.selectedContainer}
+      />
+    )
   );
 }

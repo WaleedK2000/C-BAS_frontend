@@ -10,7 +10,10 @@ export default function SelectionContainerPresentation(props) {
       <div>
         <select
           value={selectedKey}
-          onChange={(e) => setSelectedKey(e.target.value)}
+          onChange={(e) => {
+            setSelectedKey(e.target.value);
+            props.selectedContainer(e.target.value);
+          }}
         >
           {containerNames.map((key) => (
             <option key={key} value={key}>
@@ -18,12 +21,6 @@ export default function SelectionContainerPresentation(props) {
             </option>
           ))}
         </select>
-        {selectedKey && (
-          <div>
-            <p>Image: {dockerList.data[selectedKey].Config.Image}</p>
-            <p>Status: {dockerList.data[selectedKey].State.Status}</p>
-          </div>
-        )}
       </div>
     </>
   );
