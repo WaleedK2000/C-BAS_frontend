@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
 
 export default function SelectionContainerPresentation(props) {
   const dockerList = props.dockerList;
@@ -8,20 +9,25 @@ export default function SelectionContainerPresentation(props) {
   return (
     <>
       <div>
-        <select
-          value={selectedKey}
-          onChange={(e) => {
-            setSelectedKey(e.target.value);
-            props.selectedContainer(e.target.value);
-          }}
-        >
-          <option value="">Please Select Container</option>
-          {containerNames.map((key) => (
-            <option key={key} value={key}>
-              {dockerList.data[key].Name}
-            </option>
-          ))}
-        </select>
+        <FormControl sx={{ minWidth: 200 }}>
+          <InputLabel id="container-select-label">Select Container</InputLabel>
+          <Select
+            labelId="container-select-label"
+            id="container-select"
+            value={selectedKey}
+            label="Select Container"
+            onChange={(e) => {
+              setSelectedKey(e.target.value);
+              props.selectedContainer(e.target.value);
+            }}
+          >
+            {containerNames.map((key) => (
+              <MenuItem key={key} value={key}>
+                {dockerList.data[key].Name}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       </div>
     </>
   );

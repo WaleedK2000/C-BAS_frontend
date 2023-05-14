@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
 const axios = require("axios");
 export default function SelectionNode(props) {
   const [nodes, setNodes] = useState([]);
@@ -10,30 +11,35 @@ export default function SelectionNode(props) {
     };
     fetchData();
   }, []);
-  //   const [selectedNode, setSelectedNode] = useState(null);
+  // const [selectedNode, setSelectedNode] = useState(null);
 
   const selectedNode = props.selectedNode;
   const setSelectedNode = props.setSelectedNode;
 
-  //   const update = props.setSelectedNode;
+  // const update = props.setSelectedNode;
 
   return (
     <div>
       {/* <h1>All Nodes</h1> */}
-      <select
-        value={selectedNode}
-        onChange={(e) => {
-          setSelectedNode(e.target.value);
-          //   update(e.target.value);
-        }}
-      >
-        <option value="">Please Select Node</option>
-        {nodes.map((node) => (
-          <option key={node._id} value={node._id}>
-            {node.name}
-          </option>
-        ))}
-      </select>
+      <FormControl sx={{ minWidth: 200 }}>
+        <InputLabel id="node-select-label">Select Node</InputLabel>
+        <Select
+          labelId="node-select-label"
+          id="node-select"
+          value={selectedNode}
+          label="Select Node"
+          onChange={(e) => {
+            setSelectedNode(e.target.value);
+            // update(e.target.value);
+          }}
+        >
+          {nodes.map((node) => (
+            <MenuItem key={node._id} value={node._id}>
+              {node.name}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
     </div>
   );
 }

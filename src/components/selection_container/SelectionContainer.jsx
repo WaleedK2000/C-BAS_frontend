@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SelectionContainerPresentation from "./SelectionContainerPresentation";
+import { CircularProgress, Box } from "@mui/material";
 
 const axios = require("axios");
 
@@ -13,9 +14,9 @@ export default function SelectionContainer(props) {
 
   const controller = new AbortController();
 
-  //   const { nodeId } = useParams();
+  // const { nodeId } = useParams();
 
-  //   const nodeId = props.nodeId;
+  // const nodeId = props.nodeId;
   const nodeId = props.node;
 
   useEffect(() => {
@@ -54,11 +55,17 @@ export default function SelectionContainer(props) {
   }, []);
 
   return (
-    dockerList && (
-      <SelectionContainerPresentation
-        dockerList={dockerList}
-        selectedContainer={props.selectedContainer}
-      />
-    )
+    <Box sx={{ display: "flex", justifyContent: "center" }}>
+      {loading ? (
+        <CircularProgress />
+      ) : (
+        dockerList && (
+          <SelectionContainerPresentation
+            dockerList={dockerList}
+            selectedContainer={props.selectedContainer}
+          />
+        )
+      )}
+    </Box>
   );
 }
