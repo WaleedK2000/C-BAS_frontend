@@ -19,6 +19,7 @@ export default function DockerLog() {
     );
 
     setLogs(res.data.output);
+    console.log(logs);
   };
 
   return (
@@ -42,9 +43,12 @@ export default function DockerLog() {
           {logs && (
             <>
               <h2>Output</h2>
-              <textarea cols="150" rows="10" readOnly>
+              {/* <textarea cols="150" rows="10" readOnly>
                 {logs}
-              </textarea>
+              </textarea> */}
+              <div>
+                <ul>{logs}</ul>
+              </div>
             </>
           )}
         </>

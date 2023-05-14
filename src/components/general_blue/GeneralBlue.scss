@@ -1,0 +1,37 @@
+$light: #000000;
+$dark: #5e91ed;
+$borderLight: #636363;
+
+.defence-matrix {
+  padding-left: 120px;
+  .grid-container {
+    padding-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+  }
+
+  .grid-item {
+    background-color: $light;
+    color: $dark;
+    padding: 20px;
+    text-align: center;
+
+    width: 300px;
+    height: 300px;
+
+    border: solid 3px;
+    border-radius: 20px;
+    border-color: #c08090;
+  }
+
+  .grid-item:hover {
+    background-color: $dark;
+    color: $light;
+    transition: 0.5s;
+  }
+  .text-link {
+    color: inherit;
+    text-decoration: inherit;
+  }
+}

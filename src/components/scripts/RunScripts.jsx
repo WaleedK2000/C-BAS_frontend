@@ -19,6 +19,14 @@ export default function RunScripts(props) {
         title: "Expose Host File Path",
         exp: "expose_host_file",
       },
+      SHOW_HASH: {
+        title: "Show Hash",
+        exp: "executeShowHashes",
+      },
+      Shared_NAME_SPACE: {
+        title: "Get Shared Namespace",
+        exp: "executesharedNamespaces",
+      },
     },
     INITIAL_ACCESS: {
       DOCKER_SOCKET: { title: "Docker Socket", exp: "exploit1" },

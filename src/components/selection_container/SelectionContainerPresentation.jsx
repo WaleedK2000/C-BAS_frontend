@@ -15,6 +15,7 @@ export default function SelectionContainerPresentation(props) {
             props.selectedContainer(e.target.value);
           }}
         >
+          <option value="">Please Select Container</option>
           {containerNames.map((key) => (
             <option key={key} value={key}>
               {dockerList.data[key].Name}
