@@ -1,7 +1,6 @@
 import React from "react";
 import "./RedTeamConsole.scss";
 import { Grid } from "@mui/material";
-import VulnerabilityStatusPieChart from "./charts/VulnerabilityStatusPieChart";
 
 import SuccessRateBarChartLoader from "./charts/SucessRateBarChart/SuccessRateBarChartLoader";
 import OverallSuccessRate from "./charts/overallSucessrate/OverallSuccessRate";

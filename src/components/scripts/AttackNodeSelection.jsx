@@ -2,7 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import DesktopWindowsRoundedIcon from "@mui/icons-material/DesktopWindowsRounded";
 import GridItem from "./attackMatrix/GridItem";
+
+const ICON_STYLE = { fontSize: "100px" };
 
 export default function AttackNodeSelection() {
   const { attack } = useParams();
@@ -32,7 +35,7 @@ export default function AttackNodeSelection() {
               <GridItem
                 key={key}
                 title={nodes[key].name}
-                // icon={gridVal[key].icon}
+                icon={<DesktopWindowsRoundedIcon style={ICON_STYLE} />}
               />
             </Link>
           </div>
