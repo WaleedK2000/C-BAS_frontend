@@ -33,10 +33,19 @@ export default function SuccessRateBarChart({ data }) {
         beginAtZero: true,
         ticks: {
           callback: (value) => value * 100 + "%", // Convert to percentage
+          stepSize: 0.5,
         },
       },
     },
     plugins: {
+      title: {
+        display: true,
+        text: "Success Rate by Node",
+        font: {
+          size: 20,
+          weight: "bold",
+        },
+      },
       tooltip: {
         callbacks: {
           title: (tooltipItems) => nodeIds[tooltipItems[0].dataIndex], // Show nodeId as title

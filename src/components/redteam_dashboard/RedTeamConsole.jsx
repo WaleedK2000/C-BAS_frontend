@@ -13,7 +13,7 @@ export default function RedTeamConsole() {
       <div>
         <div className="grid">
           <div className="grid-container">
-            <h2>Script Sucess Rate</h2>
+            <h2>Script Sucess Rate Per Node</h2>
             <SuccessRateBarChartLoader />
           </div>
           <div className="grid-container">
