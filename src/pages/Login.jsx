@@ -58,7 +58,7 @@ export default function Login() {
         <div className="Login">
           <div className="left">
             <img
-              src="assets/logos/cbas_logo.png"
+              src="/assets/logos/cbas_logo.png"
               className="bounce-in-top"
             ></img>
             <div className="text">

@@ -17,7 +17,7 @@ export default function BlueSidebarComponent() {
       <div className="sidebar-main">
         <div className="sidebar-top-blue">
           <div className="sidebar-header">
-            <img src="c1.png" width={"60px"} height={"60px"}></img>
+            <img src="/c1.png" width={"60px"} height={"60px"}></img>
             <h1>C-BAS</h1> <br />
           </div>
           <h2>Blue Team</h2>
@@ -39,7 +39,7 @@ export default function BlueSidebarComponent() {
             },
           }}
         >
-          <MenuItem prefix={<HomeIcon />} component={<Link to="/red" />}>
+          <MenuItem prefix={<HomeIcon />} component={<Link to="/blue" />}>
             Home
           </MenuItem>
           {/* <SubMenu label="Charts">

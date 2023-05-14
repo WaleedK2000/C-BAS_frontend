@@ -10,6 +10,7 @@ import SelectionContainer from "../selection_container/SelectionContainer";
 import SelectionNode from "../selection_node/SelectionNode";
 import SelectionNodeContainer from "../selection_node_container/SelectionNodeContainer";
 import GeneralBlue from "../general_blue/GeneralBlue";
+import NodeList from "../../pages/NodeList";
 
 // Blue Team Interface Routes are stored here
 
@@ -42,6 +43,8 @@ export default function BlueTeamInterface() {
               path="/blue/Defense_Matrix/GENERAL/CONTAINER_SCAN"
               element={<BlueVulnerability />}
             />
+
+            <Route path="/node/view" element={<NodeList />} />
 
             <Route path="/blue/test" element={<BlueVulnerability />} />
           </Routes>
