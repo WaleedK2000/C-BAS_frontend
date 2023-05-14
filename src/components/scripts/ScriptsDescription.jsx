@@ -67,7 +67,7 @@ export default function ScriptsDescription() {
             />
             <Button
               type="submit"
-              variant="contained"
+              variant="text"
               color="primary"
               disabled={loading}
               startIcon={loading && <CircularProgress size={16} />}
