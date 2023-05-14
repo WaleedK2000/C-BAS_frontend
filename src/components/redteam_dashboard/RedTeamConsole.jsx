@@ -3,6 +3,7 @@ import "./RedTeamConsole.scss";
 import VulnerabilityStatusPieChart from "./charts/VulnerabilityStatusPieChart";
 
 import SuccessRateBarChartLoader from "./charts/SucessRateBarChart/SuccessRateBarChartLoader";
+import OverallSuccessRate from "./charts/overallSucessrate/OverallSuccessRate";
 
 export default function RedTeamConsole() {
   return (
@@ -18,7 +19,7 @@ export default function RedTeamConsole() {
           </div>
           <div className="grid-container">
             <h2>Vulnerability score</h2>
-            {/* <VulnerabilityStatusPieChart /> */}
+            <OverallSuccessRate />
           </div>
         </div>
       </div>

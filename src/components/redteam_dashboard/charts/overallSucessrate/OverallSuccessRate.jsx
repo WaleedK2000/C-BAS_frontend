@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import SuccessRateBarChart from "./SuccessRateBarChart";
+import OverallSuccessRatePresentation from "./OverallSuccessRatePresentation";
 
-export default function SuccessRateBarChartLoader() {
-  const [data, setData] = useState(null);
+export default function OverallSuccessRate() {
+  const [data, setData] = useState(false);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://127.0.0.1:3000/api/data/get_data_24hr_by_nodeid")
+      .get("http://127.0.0.1:3000/api/data/get_data_24hr")
       .then((response) => {
         setData(response.data);
         setLoading(false);
+        console.log("frrfrfcdcerc ------------");
         console.log(data);
       })
       .catch((error) => {
@@ -22,5 +23,8 @@ export default function SuccessRateBarChartLoader() {
       });
   }, []);
 
-  return data && <SuccessRateBarChart data={data} />;
+  console.log(".................");
+  console.log(data);
+
+  return data && <OverallSuccessRatePresentation data={data} />;
 }
