@@ -2,6 +2,8 @@ import React from "react";
 import "./RedTeamConsole.scss";
 import VulnerabilityStatusPieChart from "./charts/VulnerabilityStatusPieChart";
 
+import SuccessRateBarChartLoader from "./charts/SucessRateBarChart/SuccessRateBarChartLoader";
+
 export default function RedTeamConsole() {
   return (
     <div>
@@ -11,12 +13,12 @@ export default function RedTeamConsole() {
       <div>
         <div className="grid">
           <div className="grid-container">
-            <h2>Vulnerability Status Report</h2>
-            <VulnerabilityStatusPieChart />
+            <h2>Script Sucess Rate</h2>
+            <SuccessRateBarChartLoader />
           </div>
           <div className="grid-container">
             <h2>Vulnerability score</h2>
-            <VulnerabilityStatusPieChart />
+            {/* <VulnerabilityStatusPieChart /> */}
           </div>
         </div>
       </div>

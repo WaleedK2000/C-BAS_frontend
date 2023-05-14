@@ -6,29 +6,39 @@ import { Link } from "react-router-dom";
 
 import "./AttackMatrix.scss";
 
+const ICON_STYLE = { fontSize: "100px" };
+const PINK_COLOR = "#ffd1dc";
+const RED_COLOR = "#ff1b1c";
+
 export default function AttackMatrix() {
-  const gridVal = {
-    1: {
-      title: "Persistance",
-      icon: <DescriptionOutlinedIcon style={{ fontSize: "100px" }} />,
-      link_To: "PERSISTANCE",
+  const gridData = [
+    {
+      title: "Persistence",
+      icon: <DescriptionOutlinedIcon style={ICON_STYLE} title="Persistence" />,
+      linkTo: "PERSISTENCE",
     },
-    2: {
+    {
       title: "Initial Access",
-      icon: <DescriptionOutlinedIcon style={{ fontSize: "100px" }} />,
-      link_To: "INITIAL_ACCESS",
+      icon: (
+        <DescriptionOutlinedIcon style={ICON_STYLE} title="Initial Access" />
+      ),
+      linkTo: "INITIAL_ACCESS",
     },
-    3: {
+    {
       title: "Reconnaissance",
-      icon: <DescriptionOutlinedIcon style={{ fontSize: "100px" }} />,
-      link_To: "RECONNAISSANCE",
+      icon: (
+        <DescriptionOutlinedIcon style={ICON_STYLE} title="Reconnaissance" />
+      ),
+      linkTo: "RECONNAISSANCE",
     },
-    4: {
+    {
       title: "Denial of Service",
-      icon: <DescriptionOutlinedIcon style={{ fontSize: "100px" }} />,
-      link_To: "DOS",
+      icon: (
+        <DescriptionOutlinedIcon style={ICON_STYLE} title="Denial of Service" />
+      ),
+      linkTo: "DOS",
     },
-  };
+  ];
 
   return (
     <div className="attack-matrix">
@@ -36,43 +46,17 @@ export default function AttackMatrix() {
         <h1>Attack Matrix</h1>
       </div>
       <div className="grid-container">
-        {Object.keys(gridVal).map((key) => (
+        {gridData.map((item) => (
           <div className="grid-item">
             <Link
               className="text-link"
-              to={"/red/attack_matrix/" + gridVal[key].link_To}
+              to={"/red/attack_matrix/" + item.linkTo}
             >
-              <GridItem
-                key={key}
-                title={gridVal[key].title}
-                icon={gridVal[key].icon}
-              />
+              <GridItem key={item.title} title={item.title} icon={item.icon} />
             </Link>
           </div>
         ))}
-        {/* <div className="grid-item">
-          <GridItem title="Persistance" />
-        </div> */}
       </div>
     </div>
   );
-
-  // return (
-  //   <div className="attack-matrix">
-  //     <div className="">
-  //       <h1>Attack Matrix</h1>
-  //     </div>
-  //     <div className="grid-container">
-  //       <div className="grid-item">
-  //         <GridItem title="Persistance" />
-  //       </div>
-  //       <div className="grid-item">
-  //         {" "}
-  //         <GridItem />
-  //       </div>
-  //       <div className="grid-item">1</div>
-  //       <div className="grid-item">1</div> <div className="grid-item">1</div>
-  //     </div>
-  //   </div>
-  // );
 }
