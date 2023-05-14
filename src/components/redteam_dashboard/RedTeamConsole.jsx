@@ -1,5 +1,6 @@
 import React from "react";
 import "./RedTeamConsole.scss";
+import { Grid } from "@mui/material";
 import VulnerabilityStatusPieChart from "./charts/VulnerabilityStatusPieChart";
 
 import SuccessRateBarChartLoader from "./charts/SucessRateBarChart/SuccessRateBarChartLoader";
@@ -7,22 +8,20 @@ import OverallSuccessRate from "./charts/overallSucessrate/OverallSuccessRate";
 
 export default function RedTeamConsole() {
   return (
-    <div>
-      <div className="">
-        <h1>Red Team Dashboard</h1>
-      </div>
-      <div>
-        <div className="grid">
-          <div className="grid-container">
-            <h2>Script Sucess Rate Per Node</h2>
+    <div className="dashboard">
+      <h1 className="dashboard__title">Red Team Dashboard</h1>
+      <Grid container spacing={4}>
+        <Grid item xs={6}>
+          <div className="chart-container">
             <SuccessRateBarChartLoader />
           </div>
-          <div className="grid-container">
-            <h2>Vulnerability score</h2>
+        </Grid>
+        <Grid item xs={6}>
+          <div className="chart-container">
             <OverallSuccessRate />
           </div>
-        </div>
-      </div>
+        </Grid>
+      </Grid>
     </div>
   );
 }
