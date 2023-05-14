@@ -22,7 +22,7 @@ export default function SidebarComponent() {
       <div className="sidebar-main">
         <div className="sidebar-top">
           <div className="sidebar-header">
-            <img src="c1.png" width={"60px"} height={"60px"}></img>
+            <img src="/c1.png" width={"60px"} height={"60px"}></img>
             <h1>C-BAS</h1> <br />
           </div>
           <h2>Red Team</h2>
