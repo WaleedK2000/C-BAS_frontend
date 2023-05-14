@@ -27,8 +27,15 @@ export default function OverallSuccessRatePresentation(props) {
         display: true,
         text: "Overall Success vs Failed",
       },
+      legend: {
+        position: "right",
+      },
     },
   };
 
-  return <Doughnut data={chartData} options={options} />;
+  return (
+    <div style={{ height: 350 }}>
+      <Doughnut data={chartData} options={options} />
+    </div>
+  );
 }

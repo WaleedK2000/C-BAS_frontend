@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import { CircularProgress } from "@mui/material";
+
 import OverallSuccessRatePresentation from "./OverallSuccessRatePresentation";
 
 export default function OverallSuccessRate() {
@@ -14,11 +16,8 @@ export default function OverallSuccessRate() {
       .then((response) => {
         setData(response.data);
         setLoading(false);
-        console.log("frrfrfcdcerc ------------");
-        console.log(data);
       })
       .catch((error) => {
-        console.error(error);
         setLoading(false);
       });
   }, []);
@@ -26,5 +25,10 @@ export default function OverallSuccessRate() {
   console.log(".................");
   console.log(data);
 
-  return data && <OverallSuccessRatePresentation data={data} />;
+  return (
+    <>
+      {data && <OverallSuccessRatePresentation data={data} />}
+      {loading && <CircularProgress size={16} />}
+    </>
+  );
 }

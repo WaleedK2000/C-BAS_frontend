@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { CircularProgress } from "@mui/material";
 
 import SuccessRateBarChart from "./SuccessRateBarChart";
 
@@ -22,5 +23,10 @@ export default function SuccessRateBarChartLoader() {
       });
   }, []);
 
-  return data && <SuccessRateBarChart data={data} />;
+  return (
+    <>
+      {data && <SuccessRateBarChart data={data} />}
+      {loading && <CircularProgress size={16} />}
+    </>
+  );
 }
