@@ -3,18 +3,21 @@ import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import { Link } from "react-router-dom";
 import GridItem from "./GridItem";
 
+import InfoIcon from "@mui/icons-material/Info";
+import StorageIcon from "@mui/icons-material/Storage";
+
 import "./DefenseMatrix.scss";
 
 export default function DefenseMatrix() {
   const gridVal = {
     1: {
       title: "General Blue",
-      icon: <DescriptionOutlinedIcon style={{ fontSize: "100px" }} />,
+      icon: <InfoIcon style={{ fontSize: "100px" }} />,
       link_To: "GENERAL",
     },
     2: {
       title: "Docker Logs",
-      icon: <DescriptionOutlinedIcon style={{ fontSize: "100px" }} />,
+      icon: <StorageIcon style={{ fontSize: "100px" }} />,
       link_To: "DOCKER_LOGS",
     },
   };

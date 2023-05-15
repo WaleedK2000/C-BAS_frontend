@@ -58,15 +58,15 @@ export default function SidebarComponent() {
             {" "}
             Nodes{" "}
           </MenuItem>
-          <MenuItem prefix={<Inventory2OutlinedIcon />}> Containers </MenuItem>
+          {/* <MenuItem prefix={<Inventory2OutlinedIcon />}> Containers </MenuItem> */}
           <MenuItem
             prefix={<DescriptionOutlinedIcon />}
             component={<Link to="/red/attack_matrix" />}
           >
             Scripts
           </MenuItem>
-          <MenuItem prefix={<DescriptionOutlinedIcon />}> Settings </MenuItem>
-          <MenuItem prefix={<DescriptionOutlinedIcon />}> Logout </MenuItem>
+          {/* <MenuItem prefix={<DescriptionOutlinedIcon />}> Settings </MenuItem> */}
+          {/* <MenuItem prefix={<DescriptionOutlinedIcon />}> Logout </MenuItem> */}
         </Menu>
       </div>
     </Sidebar>

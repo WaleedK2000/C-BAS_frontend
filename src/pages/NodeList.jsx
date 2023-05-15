@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
+import { Link } from "react-router-dom";
 
 import NodeCard from "../components/global/nodeList/NodeCard";
 import NodeSummary from "../components/global/nodeList/NodeSummary";
@@ -55,7 +56,7 @@ export default function NodeList() {
         color="primary"
         aria-label="add"
         sx={{ position: "fixed", bottom: 16, right: 16 }}
-        // component={}
+        component={Link}
         to="/node/add"
       >
         <AddIcon />

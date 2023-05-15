@@ -39,9 +39,9 @@ export default function BlueSidebarComponent() {
             },
           }}
         >
-          <MenuItem prefix={<HomeIcon />} component={<Link to="/blue" />}>
+          {/* <MenuItem prefix={<HomeIcon />} component={<Link to="/blue" />}>
             Home
-          </MenuItem>
+          </MenuItem> */}
           {/* <SubMenu label="Charts">
           <MenuItem> Pie charts </MenuItem>
           <MenuItem> Line charts </MenuItem>
@@ -53,7 +53,7 @@ export default function BlueSidebarComponent() {
             {" "}
             Nodes{" "}
           </MenuItem>
-          <MenuItem prefix={<Inventory2OutlinedIcon />}> Containers </MenuItem>
+          {/* <MenuItem prefix={<Inventory2OutlinedIcon />}> Containers </MenuItem> */}
           <MenuItem
             prefix={<DescriptionOutlinedIcon />}
             component={<Link to="/blue/Defense_Matrix" />}
@@ -61,8 +61,8 @@ export default function BlueSidebarComponent() {
             {" "}
             Scripts{" "}
           </MenuItem>
-          <MenuItem prefix={<DescriptionOutlinedIcon />}> Settings </MenuItem>
-          <MenuItem prefix={<DescriptionOutlinedIcon />}> Logout </MenuItem>
+          {/* <MenuItem prefix={<DescriptionOutlinedIcon />}> Settings </MenuItem> */}
+          {/* <MenuItem prefix={<DescriptionOutlinedIcon />}> Logout </MenuItem> */}
         </Menu>
       </div>
     </Sidebar>
