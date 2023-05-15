@@ -10,6 +10,7 @@ import LoopIcon from "@mui/icons-material/Loop";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 import SearchIcon from "@mui/icons-material/Search";
 import WarningIcon from "@mui/icons-material/Warning";
+import SecurityUpdateWarningIcon from "@mui/icons-material/SecurityUpdateWarning";
 
 const ICON_STYLE = { fontSize: "100px" };
 const PINK_COLOR = "#ffd1dc";
@@ -36,6 +37,13 @@ export default function AttackMatrix() {
       title: "Denial of Service",
       icon: <WarningIcon style={ICON_STYLE} title="Denial of Service" />,
       linkTo: "DOS",
+    },
+    {
+      title: "Defense Evasion",
+      icon: (
+        <SecurityUpdateWarningIcon style={ICON_STYLE} title="Defense Evasion" />
+      ),
+      linkTo: "DEFENSE_EVASION",
     },
   ];
 

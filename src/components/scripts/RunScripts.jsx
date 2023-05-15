@@ -12,6 +12,10 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import FolderOpenIcon from "@mui/icons-material/FolderOpen";
 import VpnKeyIcon from "@mui/icons-material/VpnKey";
 import GroupWorkIcon from "@mui/icons-material/GroupWork";
+import CodeIcon from "@mui/icons-material/Code";
+import ScannerIcon from "@mui/icons-material/Scanner";
+import SecurityUpdateWarningIcon from "@mui/icons-material/SecurityUpdateWarning";
+// import SecurityUpdateWarningIcon from "@mui/icons-material/SecurityUpdateWarning";
 
 export default function RunScripts(props) {
   const ICON_STYLE = { fontSize: "100px" };
@@ -44,6 +48,11 @@ export default function RunScripts(props) {
         exp: "executesharedNamespaces",
         icon: <GroupWorkIcon style={ICON_STYLE} />, // Add the icon style
       },
+      REMOTE_CODE_EXECUTION: {
+        title: "Remote Code Execution (RCE)",
+        exp: "executeRemoteCodeExecution",
+        icon: <CodeIcon style={ICON_STYLE} />, // Use a code icon
+      },
     },
     INITIAL_ACCESS: {
       DOCKER_SOCKET: {
@@ -54,6 +63,7 @@ export default function RunScripts(props) {
       CONTAINER_CREDENTIAL_SCANNER: {
         title: "Container Credential Scanner",
         exp: "executeContainerCredentialScanner",
+        icon: <ScannerIcon style={ICON_STYLE} />, // Use a scanner icon
       },
     },
     DOS: {
@@ -61,6 +71,13 @@ export default function RunScripts(props) {
         title: "Stress Attack",
         exp: "executeStressTest",
         icon: <WarningIcon style={ICON_STYLE} />, // Add the icon style
+      },
+    },
+    DEFENSE_EVASION: {
+      EXPLIOTING_PRIVILLAGED_ACESS: {
+        title: "Exploiting Privileged Access",
+        exp: "executeExploitingPrivilegedAccess",
+        icon: <SecurityUpdateWarningIcon style={ICON_STYLE} />, // Use a shield off icon
       },
     },
   };
