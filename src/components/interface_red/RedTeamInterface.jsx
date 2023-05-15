@@ -10,6 +10,7 @@ import AttackNodeSelection from "../scripts/AttackNodeSelection";
 import RedTeamConsole from "../redteam_dashboard/RedTeamConsole";
 import NodeData from "../../pages/NodeData";
 import NodeList from "../../pages/NodeList";
+import AddNode from "../../pages/AddNode";
 
 // import InterfaceLoader from "./components/interface_loader/InterfaceLoader";
 
@@ -41,6 +42,7 @@ export default function RedTeamInterface() {
             />
 
             {/* Node Routes  */}
+            <Route path="/node/add" element={<AddNode />} />
             <Route path="/node/view" element={<NodeList />} />
             <Route path="/node/view/:nodeId" element={<NodeData />} />
           </Routes>

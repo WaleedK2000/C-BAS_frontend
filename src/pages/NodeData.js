@@ -4,6 +4,24 @@ import { Link } from "react-router-dom";
 
 import axios from "axios";
 
+// import table component and icons from @mui/material
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+} from "@mui/material";
+import ComputerIcon from "@mui/icons-material/Computer";
+import PublicIcon from "@mui/icons-material/Public";
+import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+// import one more icon for port number
+import SettingsInputComponentIcon from "@mui/icons-material/SettingsInputComponent";
+
+// import the scss file and assign it to a variable
+import styles from "./NodeData.module.scss";
+
 export default function NodeData(props) {
   const { nodeId } = useParams();
 
@@ -25,15 +43,48 @@ export default function NodeData(props) {
     <div>
       {node ? (
         <div>
-          NodeData <h2>Node Test</h2>
-          {/* <p>{props.match.params.nodeId}</p> */}
-          <ul>
-            <li>{node.name}</li>
-            <li>{node.ipAddress}</li>
-          </ul>
-          <h2>Red Team Interface</h2>
+          {/* add a heading that says Node Details */}
+          {/* use className prop to apply the heading style */}
+          <h1 className={styles.heading}>Node Details</h1>
+          {/* use a table component to display the node data */}
+          {/* use className prop to apply the table container style */}
+          <TableContainer className={styles.tableContainer}>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  {/* add icons to the table headers */}
+                  {/* use className prop to apply the table header style */}
+                  <TableCell className={styles.tableHeader}>
+                    <ComputerIcon /> Node Name
+                  </TableCell>
+                  <TableCell className={styles.tableHeader}>
+                    <PublicIcon /> IP Address
+                  </TableCell>
+                  {/* remove the table header for added by */}
+                  {/* add one more table header for port number */}
+                  <TableCell className={styles.tableHeader}>
+                    <SettingsInputComponentIcon /> Port Number
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow>
+                  <TableCell>{node.name}</TableCell>
+                  <TableCell>{node.ipAddress}</TableCell>
+                  {/* remove the table cell for added by */}
+                  {/* add one more table cell for port number */}
+                  <TableCell>{node.portNumber}</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
+          {/* add some margin and padding to the button */}
+          {/* change the button text and add an icon */}
+          {/* use className prop to apply the button style */}
           <Link to={"/" + node._id + "/running_containers"}>
-            <button>Red Team Scripts</button>
+            <button className={styles.button}>
+              <PlayCircleIcon /> View Red Team Scripts
+            </button>
           </Link>
         </div>
       ) : (

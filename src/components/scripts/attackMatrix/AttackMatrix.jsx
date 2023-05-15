@@ -6,6 +6,11 @@ import { Link } from "react-router-dom";
 
 import "./AttackMatrix.scss";
 
+import LoopIcon from "@mui/icons-material/Loop";
+import LockOpenIcon from "@mui/icons-material/LockOpen";
+import SearchIcon from "@mui/icons-material/Search";
+import WarningIcon from "@mui/icons-material/Warning";
+
 const ICON_STYLE = { fontSize: "100px" };
 const PINK_COLOR = "#ffd1dc";
 const RED_COLOR = "#ff1b1c";
@@ -14,28 +19,22 @@ export default function AttackMatrix() {
   const gridData = [
     {
       title: "Persistence",
-      icon: <DescriptionOutlinedIcon style={ICON_STYLE} title="Persistence" />,
+      icon: <LoopIcon style={ICON_STYLE} title="Persistence" />,
       linkTo: "PERSISTENCE",
     },
     {
       title: "Initial Access",
-      icon: (
-        <DescriptionOutlinedIcon style={ICON_STYLE} title="Initial Access" />
-      ),
+      icon: <LockOpenIcon style={ICON_STYLE} title="Initial Access" />,
       linkTo: "INITIAL_ACCESS",
     },
     {
       title: "Reconnaissance",
-      icon: (
-        <DescriptionOutlinedIcon style={ICON_STYLE} title="Reconnaissance" />
-      ),
+      icon: <SearchIcon style={ICON_STYLE} title="Reconnaissance" />,
       linkTo: "RECONNAISSANCE",
     },
     {
       title: "Denial of Service",
-      icon: (
-        <DescriptionOutlinedIcon style={ICON_STYLE} title="Denial of Service" />
-      ),
+      icon: <WarningIcon style={ICON_STYLE} title="Denial of Service" />,
       linkTo: "DOS",
     },
   ];
