@@ -22,6 +22,7 @@ export default function RedTeamInterface() {
         <div className="dashboard-main-content">
           <Routes>
             <Route path="/red" element={<RedTeamConsole />} />
+            <Route path="/" element={<RedTeamConsole />} />
 
             {/* Scritpt attack route */}
             <Route path="/red/attack_matrix" element={<AttackMatrix />} />
