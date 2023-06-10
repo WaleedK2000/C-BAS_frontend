@@ -1,6 +1,9 @@
+# base image
 FROM node:14.17.0-alpine3.13
 
-# set working directory
+# add app
+COPY . /app
+
 WORKDIR /app
 
 
@@ -8,8 +11,9 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 
 COPY package.json /app/package.json
+COPY package-lock.json /app/package-lock.json
 RUN npm install --silent
-RUN npm install react-scripts@4.0.3 -g --silent
+
 
 # start app
 CMD ["npm", "start"]
