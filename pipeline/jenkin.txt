@@ -1,0 +1,53 @@
+pipeline {
+    agent any
+
+    environment {
+        registry = "waleedkayani14"
+        timestamp = new Date().format('yyyyMMdd-HHmmss') // Generate a timestamp
+        imageName = "cbas-frontend-${timestamp}" // Append the timestamp to the image name
+        dockerImage = ''
+        dockerCred = '80d91fe7-b2c7-4c8b-ba44-2117390f91ed'
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                git branch: 'main', url: 'https://github.com/WaleedK2000/C-BAS_frontend.git'
+                script {
+                    dockerImage = docker.build("${registry}/${imageName}")
+                }
+            }
+        }
+        
+        stage('Push') {
+            steps {
+                script {
+                    docker.withRegistry("", dockerCred) {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+
+        stage('Stop and remove previous container') {
+            steps {
+                script {
+                    sh 'docker ps -f name=${imageName} -q | xargs --no-run-if-empty docker container stop'
+                    sh 'docker container ls -a -f name=${imageName} -q | xargs -r docker container rm'
+                }
+            }
+        }
+        
+        stage('Launch container') {
+            steps {
+                script {
+                    docker.withRegistry(env.DOCKER_REGISTRY, dockerCred) {
+                        docker.image("${registry}/${imageName}").run("-p 80:3000 --name ${imageName}")
+                    }
+                }
+            }
+        }
+        
+        
+    }
+}
