@@ -9,3 +9,33 @@ test("renders hello world", () => {
   });
   expect(headingElement).toBeInTheDocument();
 });
+jest.mock("react-pro-sidebar");
+// InterfaceLoader.test.js
+
+import { Provider } from "react-redux";
+import InterfaceLoader from "./components/interface_loader/InterfaceLoader";
+import configureStore from "redux-mock-store";
+
+const mockStore = configureStore([]);
+
+test("renders login component when interface value is LOGIN", () => {
+  const store = mockStore({ interface: { interface: "LOGIN" } });
+  render(
+    <Provider store={store}>
+      <InterfaceLoader />
+    </Provider>
+  );
+  const loginElement = screen.getByText(/login/i);
+  expect(loginElement).toBeInTheDocument();
+});
+
+test("renders red team interface component when interface value is RED", () => {
+  const store = mockStore({ interface: { interface: "RED" } });
+  render(
+    <Provider store={store}>
+      <InterfaceLoader />
+    </Provider>
+  );
+  const redTeamElement = screen.getByText(/red team/i);
+  expect(redTeamElement).toBeInTheDocument();
+});
