@@ -25,14 +25,14 @@ The frontend coding for the C-BAS (Computer-Based Assessment System) project may
 
 Make sure you have the necessary components installed before you attempt to run the C-BAS Frontend locally:
 
-- Node.js (X.X.X version)
+- Node.js (18.16.0 version)
 - Node Package Manager (NPM)
 
 ## Getting Started
 
 Follow these steps to begin using the C-BAS Frontend:
 
-Clone this repository by typing "git clone https://github.com/WaleedK2000/C-BAS_frontend.git" into your browser.
+1. Clone this repository by typing "git clone https://github.com/WaleedK2000/C-BAS_frontend.git" into your browser.
 2. Use the command 'cd C-BAS_frontend' to go to the project directory.
 3. Use 'npm install' to install dependencies.
 4. In the '.env' file, configure the backend API endpoint.
