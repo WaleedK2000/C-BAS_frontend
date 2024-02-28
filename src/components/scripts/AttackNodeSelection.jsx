@@ -4,7 +4,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import DesktopWindowsRoundedIcon from "@mui/icons-material/DesktopWindowsRounded";
 import GridItem from "./attackMatrix/GridItem";
-import { getBackendLink } from "../../helpers/backend_link";
 
 const ICON_STYLE = { fontSize: "100px" };
 
@@ -15,7 +14,7 @@ export default function AttackNodeSelection() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get(`${getBackendLink()}/api/nodes`);
+      const result = await axios.get("http://127.0.0.1:3000/api/nodes");
       setNodes(result.data);
     };
     fetchData();

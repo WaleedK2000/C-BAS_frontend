@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Select, MenuItem, FormControl, InputLabel } from "@mui/material";
-import { getBackendLink } from "../../helpers/backend_link";
-
 const axios = require("axios");
-
 export default function SelectionNode(props) {
   const [nodes, setNodes] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get(`${getBackendLink()}/api/nodes`);
+      const result = await axios.get("http://127.0.0.1:3000/api/nodes");
       setNodes(result.data);
     };
     fetchData();
