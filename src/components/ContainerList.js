@@ -6,6 +6,8 @@ import RotateLoader from "react-spinners/RotateLoader";
 import ContainerListTable from "./ContainerListTable";
 import { useParams } from "react-router";
 
+import { getBackendLink } from "../helpers/backend_link";
+
 import "../scss/components/containerList.scss";
 
 const axios = require("axios");
@@ -23,7 +25,7 @@ export default function ContainerList(props) {
   const { nodeId } = useParams();
 
   useEffect(() => {
-    const apiURL = "http://127.0.0.1:3000/api/exploits/containers/" + nodeId;
+    const apiURL = `${getBackendLink()}/api/exploits/containers/` + nodeId;
     setLoading(true);
     axios
       .get(apiURL, {

@@ -3,6 +3,8 @@ import axios from "axios";
 import { TextField, Button, Grid } from "@mui/material";
 import AddNodePresentation from "./AddNodePresentation";
 
+import { getBackendLink } from "../helpers/backend_link";
+
 export default function AddNode() {
   const [name, setName] = useState("");
   const [ipAddress, setIpAddress] = useState("");
@@ -17,7 +19,7 @@ export default function AddNode() {
     if (!isValid) return;
 
     try {
-      await axios.post("http://127.0.0.1:3000/api/nodes/", {
+      await axios.post(`${getBackendLink()}/api/nodes/`, {
         name: name,
         ipAddress: ipAddress,
         portNumber: portNumber,

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SelectionContainerPresentation from "./SelectionContainerPresentation";
 import { CircularProgress, Box } from "@mui/material";
+import { getBackendLink } from "../../helpers/backend_link";
 
 const axios = require("axios");
 
@@ -20,7 +21,7 @@ export default function SelectionContainer(props) {
   const nodeId = props.node;
 
   useEffect(() => {
-    const apiURL = "http://127.0.0.1:3000/api/exploits/containers/" + nodeId;
+    const apiURL = `${getBackendLink()}/api/exploits/containers/` + nodeId;
     setLoading(true);
     axios
       .get(apiURL, {
