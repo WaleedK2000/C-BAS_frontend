@@ -5,6 +5,8 @@ import { CircularProgress } from "@mui/material";
 
 import OverallSuccessRatePresentation from "./OverallSuccessRatePresentation";
 
+import { getBackendLink } from "../../../../helpers/backend_link";
+
 export default function OverallSuccessRate() {
   const [data, setData] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -12,7 +14,7 @@ export default function OverallSuccessRate() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("http://127.0.0.1:3000/api/data/get_data_24hr")
+      .get(`${getBackendLink()}/api/data/get_data_24hr`)
       .then((response) => {
         setData(response.data);
         setLoading(false);

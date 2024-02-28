@@ -9,6 +9,9 @@ import { Link } from "react-router-dom";
 import NodeCard from "../components/global/nodeList/NodeCard";
 import NodeSummary from "../components/global/nodeList/NodeSummary";
 
+import { getBackendLink } from "../helpers/backend_link";
+
+
 export default function NodeList() {
   const [nodes, setNodes] = useState([]);
   const [summary, setSummary] = useState({
@@ -19,7 +22,7 @@ export default function NodeList() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get("http://127.0.0.1:3000/api/nodes");
+      const result = await axios.get(`${getBackendLink()}/api/nodes`);
       setNodes(result.data);
     };
     fetchData();

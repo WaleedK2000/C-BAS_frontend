@@ -18,6 +18,7 @@ import PublicIcon from "@mui/icons-material/Public";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 // import one more icon for port number
 import SettingsInputComponentIcon from "@mui/icons-material/SettingsInputComponent";
+import { getBackendLink } from "../helpers/backend_link";
 
 // import the scss file and assign it to a variable
 import styles from "./NodeData.module.scss";
@@ -29,7 +30,7 @@ export default function NodeData(props) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios.get("http://127.0.0.1:3000/api/nodes", {
+      const result = await axios.get(`${getBackendLink()}/api/nodes`, {
         params: {
           id: nodeId,
         },
