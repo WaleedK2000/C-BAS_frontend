@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import RotateLoader from "react-spinners/RotateLoader";
 import axios from "axios";
+import { getBackendLink } from "../../helpers/backend_link";
 
 // props
 
@@ -14,7 +15,7 @@ export default function Scripts(props) {
     setExp1("Execution in Progress");
     setLoading(true);
     const res = await axios.post(
-      "http://127.0.0.1:3000/api/exploits/" + props.exp,
+      `${getBackendLink()}/api/exploits/` + props.exp,
       {
         nodeId: props.nodeId,
         conId: props.conId,

@@ -5,6 +5,8 @@ import { useParams } from "react-router";
 import axios from "axios";
 import Scripts from "./scripts/Scripts";
 
+import { getBackendLink } from "../helpers/backend_link";
+
 // TODO Need to pass variable/prop from previous page
 
 export default function ContainerData(props) {
@@ -18,13 +20,10 @@ export default function ContainerData(props) {
   const launchExp1 = async () => {
     setLoading(true);
     setExp1("Working on it!");
-    const res = await axios.post(
-      "http://127.0.0.1:3000/api/exploits/exploit1",
-      {
-        nodeId: nodeId,
-        conId: conId,
-      }
-    );
+    const res = await axios.post(`${getBackendLink()}/api/exploits/exploit1`, {
+      nodeId: nodeId,
+      conId: conId,
+    });
     setExp1("executed");
     console.log(nodeId, conId);
     console.log(res.data.result);

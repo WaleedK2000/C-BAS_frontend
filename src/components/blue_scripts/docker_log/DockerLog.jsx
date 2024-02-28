@@ -4,6 +4,8 @@ import axios from "axios";
 // import SelectionNode from "../../selection_node/SelectionNode";
 import SelectionNodeContainer from "../../selection_node_container/SelectionNodeContainer";
 
+import { getBackendLink } from "../../../helpers/backend_link";
+
 export default function DockerLog() {
   const [node, setNode] = useState(null);
   const [container, setContainer] = useState(null);
@@ -11,7 +13,7 @@ export default function DockerLog() {
 
   const getLogFromBackend = async () => {
     const res = await axios.post(
-      "http://127.0.0.1:3000/api/exploits/executeDockerLog",
+      `${getBackendLink()}/api/exploits/executeDockerLog`,
       {
         nodeId: node,
         conId: container,

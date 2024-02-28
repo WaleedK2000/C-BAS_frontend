@@ -12,6 +12,8 @@ import {
 
 import "./ScriptsDescription.scss";
 
+import { getBackendLink } from "../../helpers/backend_link";
+
 export default function ScriptsDescription() {
   const { attack, nodeId, script } = useParams();
 
@@ -27,7 +29,7 @@ export default function ScriptsDescription() {
 
     try {
       const res = await axios.post(
-        "http://127.0.0.1:3000/api/exploits/" + script,
+        `${getBackendLink()}/api/exploits/` + script,
         {
           nodeId: nodeId,
         }
