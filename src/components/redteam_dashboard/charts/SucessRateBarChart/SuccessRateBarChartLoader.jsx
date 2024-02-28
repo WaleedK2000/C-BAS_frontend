@@ -4,8 +4,6 @@ import { CircularProgress } from "@mui/material";
 
 import SuccessRateBarChart from "./SuccessRateBarChart";
 
-import { getBackendLink } from "../../../../helpers/backend_link";
-
 export default function SuccessRateBarChartLoader() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -13,7 +11,7 @@ export default function SuccessRateBarChartLoader() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`${getBackendLink()}/api/data/get_data_24hr_by_nodeid`)
+      .get("http://127.0.0.1:3000/api/data/get_data_24hr_by_nodeid")
       .then((response) => {
         setData(response.data);
         setLoading(false);

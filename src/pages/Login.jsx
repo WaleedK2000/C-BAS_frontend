@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import axios from "axios";
 // import { useHistory } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { getBackendLink } from "../helpers/backend_link";
 
 import "../scss/login.scss";
 
@@ -23,15 +22,16 @@ export default function Login() {
   // const history = useHistory();
   // const navigate = useNavigate();
 
-  console.log(`${getBackendLink()}/api/users/login`, "backend link");
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${getBackendLink()}/api/users/login`, {
-        email: username,
-        password: password,
-      });
+      const response = await axios.post(
+        "http://127.0.0.1:3000/api/users/login",
+        {
+          email: username,
+          password: password,
+        }
+      );
       console.log(response.data.user.userType);
 
       if (response.data.user.userType === "BLUE") {

@@ -1,18 +1,4 @@
 import React, { useState, useEffect } from "react";
-import {
-  Container,
-  Typography,
-  Grid,
-  Card,
-  CardHeader,
-  CardContent,
-  Avatar,
-} from "@mui/material";
-
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { green } from "@mui/material/colors";
-
-import { getBackendLink } from "../../helpers/backend_link";
 
 const axios = require("axios");
 
@@ -27,9 +13,7 @@ export default function ContainerPresentation() {
   const [dockerList, setdockerList] = useState(0);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    // const apiURL = `${getBackendLink()}/api/exploits/containers/` + nodeId;
-    const apiURL = `${getBackendLink()}/api/exploits/containers/`;
-
+    const apiURL = "http://127.0.0.1:3000/api/exploits/containers/" + nodeId;
     setLoading(true);
     axios
       .get(apiURL, {
@@ -55,10 +39,10 @@ export default function ContainerPresentation() {
         Docker Containers
       </Typography>
       <Typography variant="h6" align="center" color="textSecondary">
-        Running {dockerList.running}
+        Running {dockerlist.running}
       </Typography>
       <Grid container spacing={3} style={{ marginTop: 16 }}>
-        {Object.entries(dockerList.data).map(([key, value]) => (
+        {Object.entries(dockerlist.data).map(([key, value]) => (
           <Grid item xs={12} sm={6} md={4} key={key}>
             <Card>
               <CardHeader
